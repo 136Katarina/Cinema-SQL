@@ -80,8 +80,6 @@ def update()
     sql = "SELECT * FROM tickets WHERE film_id = $1"
     values = [@id]
     result = SqlRunner.run(sql,values).count
-    sql = "SELECT * FROM tickets WHERE fillm_id = $1"
-    SqlRunner.run(sql,values).count
   end
 
 
