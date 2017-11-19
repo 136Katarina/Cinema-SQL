@@ -1,4 +1,5 @@
 require('pg')
+require_relative("../db/sql_runner")
 require_relative('./film')
 require_relative('./customer')
 class Ticket
@@ -17,6 +18,7 @@ def save()
   (
     customer_id,
     film_id
+
   )
     VALUES
     ($1, $2)
@@ -48,7 +50,6 @@ def customer()
   customer = SqlRunner.run(sql,values).first
   return Customer.new(customer)
 end
-
 
 
 
